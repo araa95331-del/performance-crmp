@@ -1,302 +1,228 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PERFORMANCE — КРМП проект</title>
-    <style>
-        :root {
-            --primary: #ff2e2e;
-            --secondary: #1a1a1a;
-            --tertiary: #2d2d2d;
-            --text: #e0e0e0;
-            --accent-text: #ffffff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PERFORMANCE — КРМП проект</title>
+  <style>
+    :root {
+      --primary: #ff2e2e;
+      --secondary: #1a1a1a;
+      --tertiary: #2d2d2d;
+      --text: #e0e0e0;
+      --accent-text: #ffffff;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            background: linear-gradient(135deg, #1a0a0a 0%, #000000 100%);
-            color: var(--text);
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-            line-height: 1.6;
-        }
+    body {
+      background: linear-gradient(135deg, #1a0a0a 0%, #000000 100%);
+      color: var(--text);
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
 
-        ul {
-            list-style: none;
-        }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    header {
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: bold; font-size: 1.5rem; color: var(--accent-text); text-transform: uppercase; letter-spacing: 2px; }
+    nav ul { display: flex; gap: 20px; }
+    nav a:hover { color: var(--primary); }
 
-        header {
-            padding: 15px 0;
-            border-bottom: 1px solid #333;
-        }
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+      background: 
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+        url('https://via.placeholder.com/1920x600/1a1a1a/ff2e2e?text=CRMP+Performance') no-repeat center/cover;
+      color: var(--accent-text);
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 15px; text-transform: uppercase; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: var(--primary);
+      color: #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn:hover { background: #cc1515; transform: scale(1.03); }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .features { padding: 80px 0; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: 50px; text-transform: uppercase; color: var(--accent-text); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .feature-card {
+      background: var(--tertiary);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
 
-        .logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: var(--accent-text);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+    .steps { padding: 80px 0; background: rgba(0,0,0,0.6); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      text-align: center;
+    }
+    .step-item {
+      background: var(--tertiary);
+      padding: 25px;
+      border-radius: 8px;
+    }
+    .step-number {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 10px;
+    }
 
-        nav ul {
-            display: flex;
-            gap: 20px;
-        }
+    .links { padding: 60px 0; text-align: center; }
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .link-btn {
+      background: transparent;
+      border: 1px solid var(--text);
+      color: var(--text);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .link-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
 
-        nav a:hover {
-            color: var(--primary);
-        }
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.9rem;
+    }
 
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x600/1a1a1a/ff2e2e?text=CRMP+Performance') no-repeat center/cover;
-            color: var(--accent-text);
-        }
-
-            .hero h1 {
-                font-size: 3rem;
-                margin-bottom: 15px;
-                text-transform: uppercase;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-                margin-bottom: 30px;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 30px;
-            background: var(--primary);
-            color: #000;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: transform 0.2s, background 0.2s;
-        }
-
-            .btn:hover {
-                background: #cc1515;
-                transform: scale(1.03);
-            }
-
-        .features {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            color: var(--accent-text);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--tertiary);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .steps {
-            padding: 80px 0;
-            background: rgba(0,0,0,0.6);
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            text-align: center;
-        }
-
-        .step-item {
-            background: var(--tertiary);
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        .step-number {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .links {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .link-btn {
-            background: transparent;
-            border: 1px solid var(--text);
-            color: var(--text);
-            padding: 10px 20px;
-            border-radius: 4px;
-            transition: border-color 0.3s, color 0.3s;
-        }
-
-            .link-btn:hover {
-                border-color: var(--primary);
-                color: var(--primary);
-            }
-
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid #333;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .header-content { flex-direction: column; gap: 15px; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-content">
-            <div class="logo">PERFORMANCE</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="rules.html">Правила</a></li>
-                    <li><a href="forum.html">Форум</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container header-content">
+      <div class="logo">PERFORMANCE</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="rules.html">Правила</a></li>
+          <li><a href="forum.html">Форум</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>PERFORMANCE — КРМП проект нового уровня</h1>
-            <p>Реалистичные механики, честные правила, атмосфера улиц и свой автопарк. Стань частью города, где каждое решение имеет цену.</p>
-            <a href="#" class="btn">Начать играть</a>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h1>PERFORMANCE — КРМП проект нового уровня</h1>
+      <p>Реалистичные механики, честные правила, атмосфера улиц и свой автопарк. Стань частью города, где каждое решение имеет цену.</p>
+      <!-- КНОПКА СКАЧИВАНИЯ ЛАУНЧЕРА С ТВОЕЙ ССЫЛКОЙ -->
+      <a href="https://drive.google.com/uc?export=download&id=1r0vTwd7bmGle7Fb32uBz-13Nu-vHnomL" class="btn" download>Скачать лаунчер</a>
+    </div>
+  </section>
 
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Почему выбирают Performance</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Реалистичная экономика</h3>
-                    <p>Без «донатных» перекосов. Баланс цен и заработка продуман так, чтобы прогресс ощущался.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Честные правила</h3>
-                    <p>Строгий античит, модерация и защита от читеров. Играй честно и побеждай по-настоящему.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Свой автопарк</h3>
-                    <p>Проработанные модели, тюнинг и физика. Каждая машина ощущается по-своему.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Живое комьюнити</h3>
-                    <p>Discord, ивенты и совместные заезды. Здесь всегда есть с кем прокатиться.</p>
-                </div>
-            </div>
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Почему выбирают Performance</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Реалистичная экономика</h3>
+          <p>Без «донатных» перекосов. Баланс цен и заработка продуман так, чтобы прогресс ощущался.</p>
         </div>
-    </section>
+        <div class="feature-card">
+          <h3>Честные правила</h3>
+          <p>Строгий античит, модерация и защита от читеров. Играй честно и побеждай по-настоящему.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Свой автопарк</h3>
+          <p>Проработанные модели, тюнинг и физика. Каждая машина ощущается по-своему.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Живое комьюнити</h3>
+          <p>Discord, ивенты и совместные заезды. Здесь всегда есть с кем прокатиться.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="steps">
-        <div class="container">
-            <h2 class="section-title">Как начать играть</h2>
-            <div class="steps-grid">
-                <div class="step-item">
-                    <span class="step-number">1</span>
-                    <h3>Скачай лаунчер</h3>
-                    <p>В дискорде.</p>
-                </div>
-                <div class="step-item">
-                    <span class="step-number">2</span>
-                    <h3>Начни играть</h3>
-                    <p>Придумай ник и нажми кнопку "Играть".</p>
-                </div>
-                <div class="step-item">
-                    <span class="step-number">3</span>
-                    <h3>Созай персонажа</h3>
-                    <p>Выбери свою линию развития</p>
-                </div>
-                <div class="step-item">
-                    <span class="step-number">4</span>
-                    <h3>И Развивайся!</h3>
-                </div>
-            </div>
+  <section class="steps">
+    <div class="container">
+      <h2 class="section-title">Как начать играть</h2>
+      <div class="steps-grid">
+        <div class="step-item">
+          <span class="step-number">1</span>
+          <h3>Скачай лаунчер</h3>
+          <p>Загрузи официальный лаунчер с нашего сайта.</p>
         </div>
-    </section>
+        <div class="step-item">
+          <span class="step-number">2</span>
+          <h3>Установи игру</h3>
+          <p>Следуй простой инструкции в лаунчере.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">3</span>
+          <h3>Зайди на сервер</h3>
+          <p>IP: performance.crmp.ru:7777</p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">4</span>
+          <h3>Создай персонажа</h3>
+          <p>Выбери фракцию и начни свой путь в городе.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="links">
-        <div class="container">
-            <h2 class="section-title">Полезные ссылки</h2>
-            <div class="links-grid">
-                <a href="https://discord.gg/KS2eBGdB4" class="link-btn" target="_blank">Discord</a>
-                <a href="https://t.me/perfomanceroleplay" class="link-btn">Telegram</a>
-                <a href="" class="link-btn">Youtube</a>
-                <a href="forum.html" class="link-btn">Форум</a>
-            </div>
-        </div>
-    </section>
+  <section class="links">
+    <div class="container">
+      <h2 class="section-title">Полезные ссылки</h2>
+      <div class="links-grid">
+        <a href="https://discord.gg/KS2eBGdB4" class="link-btn" target="_blank">Discord</a>
+        <a href="#" class="link-btn">Telegram</a>
+        <a href="rules.html" class="link-btn">Правила сервера</a>
+        <a href="forum.html" class="link-btn">Форум</a>
+        <a href="contacts.html" class="link-btn">Контакты админов</a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>PERFORMANCE © 2026. КРМП‑проект.</p>
-            <p>Не является официальным продуктом CRMP. Возрастное ограничение: 16+</p>
-        </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p>PERFORMANCE © 2026. КРМП‑проект.</p>
+      <p>Не является официальным продуктом CRMP. Возрастное ограничение: 16+</p>
+    </div>
+  </footer>
 
 </body>
 </html>
