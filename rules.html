@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Правила сервера — PERFORMANCE</title>
+  <style>
+    :root {
+      --primary: #ff2e2e;
+      --secondary: #1a1a1a;
+      --tertiary: #2d2d2d;
+      --text: #e0e0e0;
+      --accent-text: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--secondary);
+      color: var(--text);
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: bold; font-size: 1.5rem; color: var(--accent-text); text-transform: uppercase; letter-spacing: 2px; }
+    nav ul { display: flex; gap: 20px; }
+    nav a:hover { color: var(--primary); }
+
+    main { padding: 60px 0; }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      color: var(--accent-text);
+    }
+    .rules-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .rule-item {
+      background: var(--tertiary);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 5px solid var(--primary);
+    }
+    .rule-title { font-weight: bold; color: var(--primary); margin-bottom: 5px; }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid #333;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-content { flex-direction: column; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">PERFORMANCE</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="rules.html">Правила</a></li>
+          <li><a href="forum.html">Форум</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2 class="section-title">Правила сервера</h2>
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-title">1. Запрещён читинг и использование стороннего ПО</div>
+          <p>Любые программы, дающие преимущество, приведут к перманентной блокировке.</p>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">2. Запрещено токсичное поведение и оскорбления</div>
+          <p>Мы поддерживаем дружелюбную атмосферу. Оскорбления и провокации наказываются.</p>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">3. Соблюдай RP‑логику</div>
+          <p>Не нарушай логику ролевой игры: избегай «нон‑РП» действий и метагейминга.</p>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">4. Не спамь и не флуди</div>
+          <p>Избыточные сообщения, капс и повторяющиеся посты запрещены.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>PERFORMANCE © 2026. КРМП‑проект.</p>
+      <p>Возрастное ограничение: 16+</p>
+    </div>
+  </footer>
+</body>
+</html>
