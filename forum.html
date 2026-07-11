@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Форум — PERFORMANCE</title>
+  <!-- Сюда вставь ТОТ ЖЕ CSS, что и выше (или скопируй из rules.html) -->
+  <style>
+    :root { --primary: #ff2e2e; --secondary: #1a1a1a; --tertiary: #2d2d2d; --text: #e0e0e0; --accent-text: #ffffff; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: var(--secondary); color: var(--text); font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { padding: 15px 0; border-bottom: 1px solid #333; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: bold; font-size: 1.5rem; color: var(--accent-text); text-transform: uppercase; letter-spacing: 2px; }
+    nav ul { display: flex; gap: 20px; }
+    nav a:hover { color: var(--primary); }
+    main { padding: 60px 0; text-align: center; }
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: var(--primary);
+      color: #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn:hover { background: #cc1515; transform: scale(1.03); }
+    footer { padding: 40px 0; text-align: center; border-top: 1px solid #333; color: #777; font-size: 0.9rem; }
+    @media (max-width: 768px) { .header-content { flex-direction: column; gap: 15px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">PERFORMANCE</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="rules.html">Правила</a></li>
+          <li><a href="forum.html">Форум</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; text-transform: uppercase;">Форум проекта PERFORMANCE</h2>
+      <p style="margin-bottom: 30px;">Сейчас форум находится в разработке. Для обсуждений и вопросов используй наш Discord‑сервер.</p>
+      <a href="https://discord.gg/KS2eBGdB4" class="btn" target="_blank">Перейти в Discord</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>PERFORMANCE © 2026. КРМП‑проект.</p>
+      <p>Возрастное ограничение: 16+</p>
+    </div>
+  </footer>
+</body>
+</html>
